@@ -52,15 +52,15 @@ jobs:
       run: yarn lint
 
     - name: Run headless unit test
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: |
-            yarn test
-            yarn e2e
-        if: matrix.os == 'ubuntu-latest'
-      - name: Run headless unit test
-        with:
-          run: |
-            yarn test
-            yarn e2e
-        if: matrix.os !== 'ubuntu-latest'
+      uses: GabrielBB/xvfb-action@v1
+      with:
+        run: |
+          yarn test
+          yarn e2e
+      if: matrix.os == 'ubuntu-latest'
+    - name: Run headless unit test
+      with:
+        run: |
+          yarn test
+          yarn e2e
+      if: matrix.os !== 'ubuntu-latest'
