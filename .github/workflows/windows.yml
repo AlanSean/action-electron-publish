@@ -9,7 +9,7 @@ jobs:
   Explore-GitHub-Actions:
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [12.x, 13.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
